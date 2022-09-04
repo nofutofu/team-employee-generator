@@ -1,0 +1,65 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    line-height: 20px;
+}
+
+header {
+    padding: 20px 0 20px 0;
+    background-color: rgba(86, 126, 201, 0.959);
+}
+
+.title {
+    color: white;
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    margin-top: 5vh;
+} 
+
+.team-card {
+    min-width: 250px;
+    margin: 0 8vw 8vh 0;
+    background-color: rgba(118, 161, 167, 0.89);
+    box-shadow: 8px 5px 10px black;
+}
+
+.name,
+.role {
+    color: rgba(255, 255, 255, 0.918);
+    margin-left: 10px;
+}
+
+.id,
+.email,
+.misc {
+    padding: 7px 7px 7px 7px;
+    border: 1px solid lightgray;
+    margin: 0;
+}
+
+.sub-items {
+    padding: 40px 20px 40px 20px;
+    border: 1px solid lightgray;
+    background-color: rgb(253, 250, 250);
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active{text-decoration: none; 
+color: blue;}
+
+@media (max-width: 1440px) {
+    .content {
+        margin-left: 10vw;
+        margin-right: 10vw;
+    } 
+}
