@@ -3,6 +3,7 @@ const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 const fs = require('fs');
+let fixYet = false;
 
 console.log('Welcome to the team builder app. Please enter the following information.');
 
@@ -200,9 +201,12 @@ function constructTeam() {
 
         fs.appendFile('./dist/team-build.html', htmlAdd, function (err) {
             if (err) throw err; 
+            if (!fixYet) {
+            fixYet = true;
+            fixHtml();
+            }
     })
   }
-  fixHtml();
 }
 
 function fixHtml() {

@@ -1,6 +1,6 @@
 <h1 align="center">team-employee-generator</h1>
 
-<p align="center">Jest and Inquirer week 10 challenge<project-description></p>
+<p align="center">Jest & Inquirer week 10 challenge<project-description></p>
 
 ## Screenshots
 
