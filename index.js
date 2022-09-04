@@ -200,9 +200,9 @@ function constructTeam() {
 
         fs.appendFile('./dist/team-build.html', htmlAdd, function (err) {
             if (err) throw err; 
-            fixHtml();
     })
   }
+  fixHtml();
 }
 
 function fixHtml() {
