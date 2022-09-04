@@ -11,6 +11,7 @@ startBuild();
 
 let employees = []
 
+// starts the application and begins prompting for the manager questions
 function startBuild() {
     inquirer
     .prompt([ 
@@ -40,6 +41,7 @@ function startBuild() {
         message: 'Would you like to enter an \n\t[Engineer] \n\t[Intern] \n\tOr [Finish] building your team?'
     }
   ])
+  // constructs a new manager and pushes it to employees as the initial employee/team leader
     .then((response) => {
     const manager = new Manager(response.name, response.id, response.email, response.officeNum)
     employees.push(manager);
@@ -48,8 +50,9 @@ function startBuild() {
     })
   }
 
-
+// continues asking and gives you the option to finish creating team
 function continueOption(response) {
+    // switch case to check if the employee is an engineer
     switch(response.choice) {
         case 'Engineer':
             inquirer
@@ -80,6 +83,7 @@ function continueOption(response) {
             message: 'Would you like to enter an \n\t[Engineer] \n\t[Intern] \n\tOr [Finish] building your team?'
         }
     ])
+    // constructs new engineer and adds it to employees
     .then((response) => {
         const engineer = new Engineer(response.name, response.id, response.email, response.github)
         employees.push(engineer);
@@ -88,6 +92,7 @@ function continueOption(response) {
         })
             break;
 
+            // switch case to check if the employee is an intern
         case 'Intern':
             inquirer
         .prompt([ 
@@ -117,6 +122,7 @@ function continueOption(response) {
             message: 'Would you like to enter an \n\t[Engineer] \n\t[Intern] \n\tOr [Finish] building your team?'
         }
     ])
+    // constructs a new intern and pushes it to employees
     .then((response) => {
         const intern = new Intern(response.name, response.id, response.email, response.school)
         employees.push(intern);
@@ -125,10 +131,12 @@ function continueOption(response) {
         })
             break;
 
+            // if you type finish; move to begins to the html setup
         case 'Finish':
             finishTeam();
             break;
 
+            // protection if the user does not type a valid response
         default: 
             console.log(`Sorry, ${response.choice} was not a valid command please select again.`)
             inquirer
@@ -145,6 +153,7 @@ function continueOption(response) {
     }
 }
 
+// sets up the html to add further to
 function finishTeam() {
 console.log('\n\tFINISH');
 let htmlContent = `<html lang="en">
@@ -166,6 +175,7 @@ fs.writeFile('./dist/team-build.html', htmlContent, function (err) {
 })
 }
 
+// loops through each employee and adds their respective html
 function constructTeam() {
     for (let i = 0; i < employees.length; i++) {
 
@@ -209,6 +219,7 @@ function constructTeam() {
   }
 }
 
+// adds the closing divs to the html
 function fixHtml() {
    
 let fixAdd =`

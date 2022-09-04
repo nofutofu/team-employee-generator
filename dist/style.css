@@ -15,6 +15,7 @@ header {
     text-align: center;
 }
 
+/* all important content after the header */
 .content {
     display: flex;
     flex-wrap: wrap;
@@ -24,6 +25,7 @@ header {
     margin-top: 5vh;
 } 
 
+/* main team member boxes */
 .team-card {
     min-width: 250px;
     margin: 0 8vw 8vh 0;
@@ -31,6 +33,7 @@ header {
     box-shadow: 8px 5px 10px black;
 }
 
+/* individual row styling starts here */
 .name,
 .role {
     color: rgba(255, 255, 255, 0.918);
@@ -51,6 +54,7 @@ header {
     background-color: rgb(253, 250, 250);
 }
 
+/* make links look uniform */
 a:link,
 a:visited,
 a:hover,
